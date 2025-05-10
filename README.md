@@ -68,35 +68,6 @@ Here is a visual preview of key application interfaces:
   </tr>
 </table>
 
-
-## Screenshots
-
-
-
-### Registration Form
-<img src="preview/registrationForm.png" alt="Registration Form" width="600" />
-
-### Login Form
-<img src="preview/loginForm.png" alt="Login Form" width="600" />
-
-### Main Page
-<img src="preview/mainPage.png" alt="Main
-
-
-registrationForm.png – User registration interface
-
-loginForm.png – User login interface
-
-mainPage.png – Main application view with avatar
-
-achievementSystem.png – Gamified achievements panel
-
-user-settings.png – User settings including theme selection
-
-profile-settings.png – Profile editing (user info and avatar)
-
-responsive-page.png – Responsive design showcase
-
 ## Getting Started
 
 1. Clone the repository:
