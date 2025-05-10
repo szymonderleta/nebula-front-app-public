@@ -1,0 +1,6 @@
+### GET users achievements endpoint require cookie with jwttoken
+GET http://localhost:8081/api/v1/users/achievements?page=1&size=5&sortBy=achievementId&sortOrder=asc&level=5&filterType=less%20or%20equal
+Content-Type: application/json
+Cookie: jwtToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNCxjbnk2ODI5MUBiY29vcS5jb20iLCJpc3MiOiJEYkNvbm5lY3Rpb25BcHAiLCJyb2xlcyI6W3siaWQiOjEsIm5hbWUiOiJST0xFX1VTRVIifV0sImlhdCI6MTczNzgwODQ4MywiZXhwIjoxNzM3ODEyMDgzfQ.KOoynrPSz0gckeNhRsm5CVK1iMNLXatWZQyo1K3c-KX_hFtFs1n2ObcOqoIcpsURJHK1M55R5vei1SsHj2PM5g
+
+###

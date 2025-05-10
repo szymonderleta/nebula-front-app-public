@@ -1,0 +1,13 @@
+@import url('Themes.css');
+
+.highlight-here {
+    font-weight: bold; /* Pogrubienie */
+    color: var(--button-green); /* Kolor przyciągający uwagę */
+    text-decoration: underline; /* Podkreślenie jak link */
+    cursor: pointer; /* Zmiana kursora na "rękę" */
+    transition: color 0.2s ease-in-out; /* Dodaj animację zmiany koloru */
+}
+
+.highlight-here:hover {
+    color: var(--button-green-hover); /* Zmiana koloru przy najechaniu */
+}

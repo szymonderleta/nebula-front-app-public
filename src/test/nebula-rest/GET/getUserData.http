@@ -1,0 +1,5 @@
+### GET user data
+GET http://localhost:8081/api/v1/users
+Cookie: jwtToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNSxjbnk2ODI5MkBiY29vcS5jb20iLCJpc3MiOiJEYkNvbm5lY3Rpb25BcHAiLCJyb2xlcyI6W3siaWQiOjEsIm5hbWUiOiJST0xFX1VTRVIifV0sImlhdCI6MTczNzg4OTY2NCwiZXhwIjoxNzM3ODkzMjY0fQ.wrXldmPatEKxXR8gCAUW7quQAcO-mTzWwADbwBEwtag1m-ZBiUSlRsAYag1jTtb2rSxSEqzJL70szdTGPOerBw
+
+###

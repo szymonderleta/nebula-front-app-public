@@ -1,0 +1,12 @@
+### POST add game to table
+POST http://localhost:8081/api/v1/games
+Content-Type: application/json
+Cookie: jwtToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNCxjbnk2ODI5MUBiY29vcS5jb20iLCJpc3MiOiJEYkNvbm5lY3Rpb25BcHAiLCJyb2xlcyI6W3siaWQiOjEsIm5hbWUiOiJST0xFX1VTRVIifSx7ImlkIjo0LCJuYW1lIjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzM3ODg5MTM1LCJleHAiOjE3Mzc4OTI3MzV9.ZXNnU7xMZqn7-cD-Z1pLmK4AFpKJNZkqv40nr7eapZVSjZlcj7S32Q4NHdLcRtKgd7SWTDmyEspczbcWjwQfuA
+
+{
+  "name": "db Zero 2025",
+  "enable": "true",
+  "iconUrl": "none",
+  "pageUrl": "null"
+}
+###

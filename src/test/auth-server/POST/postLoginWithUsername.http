@@ -1,0 +1,10 @@
+### POST request to example server
+POST http://localhost:8087/api/v1/auth/login
+Content-Type: application/json
+X-Requesting-App: nebula_rest_api
+
+{
+  "login": "xbsmvuzfayyzjxdxak",
+  "password": "cStbkrsp}B3VxD."
+}
+###

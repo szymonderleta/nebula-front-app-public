@@ -1,0 +1,13 @@
+### POST request to get token for account
+#POST https://milkyway.local:8555/nebula-rest-api/api/v1/account/token
+# @no-cookie-jar
+POST https://localhost:8081/api/v1/account/token
+Content-Type: application/json
+X-XSRF-TOKEN: 79561221-0423-492c-b301-1e265e52b86b
+cookie: X-XSRF-TOKEN: 79561221-0423-492c-b301-1e265e52b86b
+
+{
+  "email": "cny68292@bcooq.com",
+  "password": "test001"
+}
+###

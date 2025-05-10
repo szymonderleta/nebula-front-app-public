@@ -1,0 +1,5 @@
+### PATCH request to unlock account by id
+PATCH http://localhost:8081/api/v1/account/unlock/14
+Content-Type: application/json
+
+###

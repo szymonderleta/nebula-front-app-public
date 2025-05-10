@@ -1,0 +1,99 @@
+@import url('Themes.css');
+
+.menu-container {
+    background-color: var(--general-bg-color-head);
+    color: var(--general-text-color-head);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.Menu-logo {
+    height: 8vmin;
+    pointer-events: none;
+    margin-left: 10px;
+    padding-right: 40px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(0.95);
+}
+
+.menu-item img {
+    width: 30px;
+    height: 30px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.popup-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--general-bg-color-head);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--tf-focus-box-shadow);
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.popup-menu div {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup-menu div:hover {
+    background-color: var(--general-bg-color-head-inverted);
+    color: var(--general-text-color-head-inverted);
+}
+
+.avatar-container {
+    position: relative;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.avatar-container:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}

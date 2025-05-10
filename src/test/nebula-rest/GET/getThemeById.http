@@ -1,0 +1,4 @@
+### GET theme by id, public endpoint
+GET http://localhost:8081/api/v1/themes/2
+
+###

@@ -1,0 +1,11 @@
+### POST request to example server
+#POST http://localhost:8087/api/v1/auth/login
+POST https://milkyway.local:8555/andromeda-authorization-server/api/v1/auth/login
+Content-Type: application/json
+X-Requesting-App: nebula_rest_api
+
+{
+  "login": "xbsmvuzfayyzjxdxak@ckptr.com",
+  "password": "cStbkrsp}B3VxD."
+}
+###

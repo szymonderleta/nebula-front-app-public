@@ -1,0 +1,14 @@
+### POST request to register account
+POST http://localhost:8081/api/v1/account/register
+Content-Type: application/json
+
+{
+  "login": "test001",
+  "email": "test001@test.net",
+  "password": "test001",
+  "birthdate": "2005-01-25T07:56:15.655Z",
+  "nationality": 80,
+  "gender": 1
+}
+
+###

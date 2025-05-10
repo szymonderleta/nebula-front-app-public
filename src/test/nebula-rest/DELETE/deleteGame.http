@@ -1,0 +1,6 @@
+### DELETE game from table
+DELETE http://localhost:8081/api/v1/games/9
+Content-Type: application/json
+Cookie: jwtToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNCxjbnk2ODI5MUBiY29vcS5jb20iLCJpc3MiOiJEYkNvbm5lY3Rpb25BcHAiLCJyb2xlcyI6W3siaWQiOjEsIm5hbWUiOiJST0xFX1VTRVIifSx7ImlkIjo0LCJuYW1lIjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzM3ODg1NDMzLCJleHAiOjE3Mzc4ODkwMzN9.LjFPmLnU_Y5RHADzr6Ii8XHoFSd4rD4TXfKpJEX9jaZZ4o7hPecRv1JcHLw4A4LESO0rFokPQpT6CzMssu75mA
+
+###

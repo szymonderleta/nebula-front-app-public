@@ -1,0 +1,8 @@
+### GET request
+#GET http://localhost:8087/api/v1/table/tokens?page=0&size=5
+# @no-cookie-jar
+GET https://milkyway.local:8555/andromeda-authorization-server/api/v1/table/tokens?page=0&size=5
+Content-Type: application/json
+X-Requesting-App: nebula_rest_api
+Cookie: jwtToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSx4YnNtdnV6ZmF5eXpqeGR4YWtAY2twdHIuY29tIiwiaXNzIjoiRGJDb25uZWN0aW9uQXBwIiwicm9sZXMiOlt7ImlkIjoxLCJuYW1lIjoiUk9MRV9VU0VSIn1dLCJpYXQiOjE3MzcyOTA5OTEsImV4cCI6MTczNzI5NDU5MX0.wq3GSOq27f7L9FgERbxZNFR3w05la34eNFgCA9LxnsW9DFlb2qDgtRiGIxY6Y9j-I4YfBaM3dmkZK45-rnro2A
+###

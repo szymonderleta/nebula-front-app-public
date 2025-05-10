@@ -1,0 +1,10 @@
+### PATCH request to confirm account
+PATCH http://localhost:8081/api/v1/account/confirm
+Content-Type: application/json
+
+{
+  "tokenId": 14,
+  "token": "NBEvr2p4PNdZn6RRXA4LTwWzTjLC4u0fxTt97Wx4EQ3tSNGdjoNgUjV4Yu0qGSIVfbACsL9VT6oGXZcs2mbw8ATln33XfImz7qWI"
+}
+
+###

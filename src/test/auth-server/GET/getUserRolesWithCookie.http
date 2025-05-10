@@ -1,0 +1,4 @@
+GET http://localhost:8087/api/v1/table/user-roles/2
+Content-Type: application/json
+X-Requesting-App: nebula_rest_api
+Cookie: jwtToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSx4YnNtdnV6ZmF5eXpqeGR4YWtAY2twdHIuY29tIiwiaXNzIjoiRGJDb25uZWN0aW9uQXBwIiwicm9sZXMiOlt7ImlkIjoxLCJuYW1lIjoiUk9MRV9VU0VSIn1dLCJpYXQiOjE3MzcyMDE2NjMsImV4cCI6MTczNzIwNTI2M30.Z9ZsLnMGafrB3MT3JilaR64pw3eV0q_vM25pFh1cWybHOZRE9z9qw3HWfGvqSakOyaIkL1WCIwE480oXV4JUhw; Max-Age=3600; Expires=Sat, 18 Jan 2025 13:01:03 GMT; Path=/; Secure; HttpOnly

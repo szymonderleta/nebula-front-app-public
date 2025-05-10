@@ -1,0 +1,31 @@
+### PUT user profile data
+PUT https://localhost:8081/api/v1/users/settings
+#PUT https://milkyway.local:8555/nebula-rest-api/api/v1/users/settings
+Content-Type: application/json
+#Cookie: jwtToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSx4YnNtdnV6ZmF5eXpqeGR4YWtAY2twdHIuY29tIiwiaXNzIjoiRGJDb25uZWN0aW9uQXBwIiwicm9sZXMiOlt7ImlkIjoxLCJuYW1lIjoiUk9MRV9VU0VSIn1dLCJpYXQiOjE3Mzg2OTI4MjIsImV4cCI6MTczODY5NjQyMn0.4DLVDmSVfenLxmE3QGgGC9s_F03462coi3oLi7LnaPuMydCCGi-FgUVAffn0uakuJzpjfwqSSCc6rne59WSmTA
+Cookie: jwtToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSx4YnNtdnV6ZmF5eXpqeGR4YWtAY2twdHIuY29tIiwiaXNzIjoiRGJDb25uZWN0aW9uQXBwIiwicm9sZXMiOlt7ImlkIjoxLCJuYW1lIjoiUk9MRV9VU0VSIn1dLCJpYXQiOjE3Mzg2OTM2OTMsImV4cCI6MTczODY5NzI5M30.-o5deJgYXTWwPZ2NmqS6y9r98wn9P97fZw23jiYK8TXgrGcbTc8AZhr12XvDlpL1yb6HQtAiiIIcRq_a4XsAxg
+authorization: Basic bmVidWxhOkZaQndpZTdqZlRjOWZHeFhvQ0lQQWJqZ2dPejFBZVpIdGNIZUc0eTd0b010U213dElUamdCSWdWSjRRZ25ROA==
+
+{
+  "userId": 15,
+
+  "general": {
+    "userId": 15,
+    "theme": {
+      "id": 2,
+      "name": "fire"
+    }
+  },
+
+  "sound": {
+    "userId": 15,
+    "muted": true,
+    "battleCry": true,
+    "volumeMaster": 10,
+    "volumeMusic": 10,
+    "volumeEffects": 10,
+    "volumeVoices": 0
+  }
+
+}
+###
