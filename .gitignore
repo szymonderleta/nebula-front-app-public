@@ -25,3 +25,7 @@ yarn-error.log*
 /ssl/
 /ssl/localhost.crt
 /ssl/localhost.key
+/build-2.0.0/
+/build-3.0.0/
+/build-2.0.0.zip
+/build-3.0.0.zip

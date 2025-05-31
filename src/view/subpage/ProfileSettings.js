@@ -3,7 +3,7 @@ import '../../resource/style/FormUpdater.css';
 
 import UserData from '../../data/UserData';
 import ThemeUpdaterFetchData from "../../api/components/updaters/ThemeUpdaterFetchData";
-import UserSettingsUpdate from "../../api/user/UserSettignsUpdate";
+import UserSettingsUpdate from "../../api/user/UserSettingsUpdate";
 import themeListenerSingletonInstance from "../../singles/ThemeListenerSingleton";
 
 const initializeGeneralSettings = (userData) => ({
@@ -86,9 +86,12 @@ const ProfileEditor = () => {
         let result = await UserSettingsUpdate(generalSettings, soundSettings);
         if (result) {
             let updated = await UserData.fetchUserData();
-            alert(updated ? 'Profile data updated' : 'Profile data updated but not downloaded');
-            if (updated) await themeListenerSingletonInstance.notifyObservers();
-            else alert('Profile data updated but not downloaded');
+            if (updated) {
+                alert('Profile data updated');
+                await themeListenerSingletonInstance.notifyObservers();
+            } else {
+                alert('Profile data updated but not downloaded');
+            }
         } else alert('Something is wrong...');
     };
 

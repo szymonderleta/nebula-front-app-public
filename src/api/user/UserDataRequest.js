@@ -1,5 +1,5 @@
 import {APP_REQUEST_URL} from '../../data/Credentials';
-import GETRequest from "../method/GETRequest";
+import {GETRequest} from "../handler/handlerTokenRefresh";
 
 async function UserDataRequest() {
     const url = APP_REQUEST_URL + '/users';

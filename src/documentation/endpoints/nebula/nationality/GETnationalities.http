@@ -1,0 +1,6 @@
+GET https://localhost:8081/api/v1/nationalities
+
+# public endpoint
+# Examples
+# GET https://milkyway.local:8555/nebula-rest-api/api/v1/nationalities
+# GET http://localhost:8081/api/v1/nationalities

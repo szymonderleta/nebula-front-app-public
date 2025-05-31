@@ -44,7 +44,7 @@ const LoginForm = ({onLogin, loginError, onNavigate}) => {
     };
 
     return (
-        <div className={'div-major'}>
+        <div className={'div-major'} data-testid="login-form">
             <img src={logo} className="App-logo" alt="logo"/>
             <h1>Login</h1>
             <form className={'form-major'}>

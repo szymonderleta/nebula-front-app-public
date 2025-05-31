@@ -11,9 +11,10 @@ import GenderUpdaterFetchData from "../../api/components/updaters/GenderUpdaterF
 import ValidationUtils from "../../util/ValidationUtils";
 import UserProfileDataUpdate from "../../api/user/UserProfileDataUpdate";
 
-const PROFILE_UPDATE_ERROR_MESSAGE = 'Incorrect form data, this usually happens if the name fields contain illegal characters or are empty.';
-const PROFILE_UPDATE_SUCCESS_MESSAGE = 'Profile data updated';
-const PROFILE_UPDATE_PARTIAL_SUCCESS_MESSAGE = 'Profile data updated but not downloaded';
+export const PROFILE_UPDATE_ERROR_MESSAGE = 'Incorrect form data, this usually happens if the name fields contain illegal characters or are empty.';
+export const PROFILE_UPDATE_SUCCESS_MESSAGE = 'Profile data updated';
+export const PROFILE_UPDATE_PARTIAL_SUCCESS_MESSAGE = 'Profile data updated but not downloaded';
+export const PROFILE_UPDATE_FAILED_MESSAGE = 'Failed to update profile. Please try again.';
 
 /**
  * ProfileEditor is a React functional component that provides an interface
@@ -101,24 +102,56 @@ const ProfileEditor = () => {
         }));
     };
 
+    /**
+     * Function to handle changes to a name field in profile data.
+     *
+     * This function validates the input name to ensure it conforms to the specified constraints:
+     * - Only includes letters from all alphabets (Unicode),
+     *   modifying/combining marks (e.g., accents), white spaces, and hyphens.
+     *   (RegExp: `/^[\p{L}\p{M}\s-]+$/u`)
+     * - The name must not exceed a maximum length of 50 characters.
+     *
+     * Explanation of the regular expression:
+     * - \p{L} — all letters from all alphabets (Unicode)
+     * - \p{M} — modifier and combining marks (e.g., accents)
+     * - \s — whitespace characters (spaces, tabs, etc.)
+     * - - — hyphen, for compound first or last names
+     *
+     * If the validation passes, it updates the relevant field in the profile data.
+     *
+     * @param {string} field - The key of the field in the profile data object that needs to be updated.
+     * @param {string} newName - The new name value to be validated and potentially applied to the profile data.
+     */
     const handleNameChange = (field, newName) => {
-        if (newName) {
+        const nameRegex = /^[\p{L}\p{M}\s-]*$/u;
+        const MAX_LENGTH = 50;
+
+        if (newName &&
+            newName.length <= MAX_LENGTH &&
+            nameRegex.test(newName)) {
             setProfileData(prevData => ({
                 ...prevData,
                 [field]: newName,
             }));
         }
+
     };
 
     const saveChanges = async () => {
-        if (ValidationUtils.isProfileUpdateDataValid(profileData)) {
-            const isUpdateSuccessful = await UserProfileDataUpdate(profileData);
-            if (isUpdateSuccessful) {
-                const isDataFetched = await UserData.fetchUserData();
-                alert(isDataFetched ? PROFILE_UPDATE_SUCCESS_MESSAGE : PROFILE_UPDATE_PARTIAL_SUCCESS_MESSAGE);
+        try {
+            if (ValidationUtils.isProfileUpdateDataValid(profileData)) {
+                const isUpdateSuccessful = await UserProfileDataUpdate(profileData);
+                if (isUpdateSuccessful) {
+                    const isDataFetched = await UserData.fetchUserData();
+                    alert(isDataFetched ? PROFILE_UPDATE_SUCCESS_MESSAGE : PROFILE_UPDATE_PARTIAL_SUCCESS_MESSAGE);
+                } else {
+                    alert(PROFILE_UPDATE_FAILED_MESSAGE);
+                }
+            } else {
+                alert(PROFILE_UPDATE_ERROR_MESSAGE);
             }
-        } else {
-            alert(PROFILE_UPDATE_ERROR_MESSAGE);
+        } catch (error) {
+            alert(`${PROFILE_UPDATE_ERROR_MESSAGE}: ${error.message}`);
         }
     };
 
@@ -135,8 +168,10 @@ const ProfileEditor = () => {
                         onUpdateLastName={(newName) => handleNameChange('lastName', newName)}
                     />
                 )}
-                <label>Birthdate:</label>
-                <input className='input-default' align="right"
+                <label htmlFor="birthdate">Birthdate:</label>
+                <input id="birthdate"
+                       className='input-default'
+                       align="right"
                        type="date"
                        value={profileData.birthDate}
                        onChange={(e) => handleChange('birthDate', e.target.value)}

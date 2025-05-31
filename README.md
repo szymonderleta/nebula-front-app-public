@@ -1,9 +1,17 @@
 # Nebula Front App
 
-Author: Szymon Derleta  
-Current Version: 2.0.0 First Public Release  
-Repository: [GitHub - Nebula Front App](https://github.com/szymonderleta/nebula-front-app-public)  
-Current Jenkins Configuration: --  
+<div align="left">
+
+![Author](https://img.shields.io/badge/Author-Szymon%20Derleta-white?style=for-the-badge)
+
+![Release](https://img.shields.io/badge/Release-First%20Public%20Release-green?style=for-the-badge)  
+![Version](https://img.shields.io/badge/Version-3.0.0-green?style=for-the-badge)
+
+📄 Changelog: [Changelog](src/documentation/CHANGELOG.md)  
+🔗 Repository: [GitHub - Nebula Front App](https://github.com/szymonderleta/nebula-front-app-public)   
+🛠️ Jenkins Pipeline: N/A
+
+</div>
 
 ## Overview
 
@@ -40,62 +48,33 @@ Here is a visual preview of key application interfaces:
 <table>
   <tr>
     <td align="center">
-      <img src="preview/registartion-form.png" alt="Registration Form" width="400" /><br/>
+      <img src="src/documentation/preview/registartion-form.png" alt="Registration Form" width="400" /><br/>
       <sub>Registration Form</sub>
     </td>
     <td align="center">
-      <img src="preview/login-page.png" alt="Login Form" width="400" /><br/>
+      <img src="src/documentation/preview/login-page.png" alt="Login Form" width="400" /><br/>
       <sub>Login Form</sub>
     </td>
     <td align="center">
-      <img src="preview/main-page.png" alt="Main Page" width="400" /><br/>
+      <img src="src/documentation/preview/password-change.png" alt="Password change" width="400" /><br/>
       <sub>Main Page</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="preview/dynamic-theme.png" alt="Dynamic Theme" width="400" /><br/>
+      <img src="src/documentation/preview/dynamic-theme.png" alt="Dynamic Theme" width="400" /><br/>
       <sub>Dynamic Theme</sub>
     </td>
     <td align="center">
-      <img src="preview/user-settings.png" alt="User Settings" width="400" /><br/>
+      <img src="src/documentation/preview/user-settings.png" alt="User Settings" width="400" /><br/>
       <sub>User Settings</sub>
     </td>
     <td align="center">
-      <img src="preview/resposible-page.png" alt="Responsive Page" width="400" /><br/>
+      <img src="src/documentation/preview/resposible-page.png" alt="Responsive Page" width="400" /><br/>
       <sub>Responsive Page</sub>
     </td>
   </tr>
 </table>
-
-
-## Screenshots
-
-
-
-### Registration Form
-<img src="preview/registrationForm.png" alt="Registration Form" width="600" />
-
-### Login Form
-<img src="preview/loginForm.png" alt="Login Form" width="600" />
-
-### Main Page
-<img src="preview/mainPage.png" alt="Main
-
-
-registrationForm.png – User registration interface
-
-loginForm.png – User login interface
-
-mainPage.png – Main application view with avatar
-
-achievementSystem.png – Gamified achievements panel
-
-user-settings.png – User settings including theme selection
-
-profile-settings.png – Profile editing (user info and avatar)
-
-responsive-page.png – Responsive design showcase
 
 ## Getting Started
 
@@ -141,12 +120,11 @@ This file contains environment variables used to configure the application:
 HTTPS=true
 SSL_CRT_FILE=./ssl/localhost.crt        # Path to SSL certificate for HTTPS
 SSL_KEY_FILE=./ssl/localhost.key        # Path to SSL key file for HTTPS
-; REACT_APP_REQUEST_URL=https://localhost:8081/api/v1
+# REACT_APP_REQUEST_URL=https://localhost:8081/api/v1
 REACT_APP_REQUEST_URL=https://milkyway.local:8555/nebula-rest-api/api/v1  # API endpoint
 REACT_APP_USERNAME=nebula               # Default username for API authentication
 REACT_APP_PASSWORD=4354gfdbfdg5756756765lkj65l4kj6p34o958i49p45h            # Default password for API authentication
 ```
-
 
 ## Issuses
 
@@ -154,11 +132,8 @@ Image is uploaded on server side, but sometimes it is not refreshed in the front
 
 ## Future Goals / Planned Features
 
-Comprehensive Test Coverage – Implement full unit and integration test coverage for key components and business logic.
-
-Token Refresh Mechanism – Integrate support for the refresh token system provided by NebulaRestApi, enabling automatic renewal of accessToken using refreshToken.
-
-
+ - Update Main Page Game Layout  
+ - Rewrite unit tests
 
 ## License
 
@@ -166,4 +141,4 @@ Nebula Front App is licensed under the Apache License 2.0: https://www.apache.or
 
 The Nebula logo and Nebula menu logo were created with the assistance of ChatGPT.
 
-Icons used in the application are sourced from game-icons.net and are licensed under Creative Commons BY 3.0: https://creativecommons.org/licenses/by/3.0/
+Icons used in the application are sourced from https://game-icons.net/ and are licensed under Creative Commons BY 3.0: https://creativecommons.org/licenses/by/3.0/

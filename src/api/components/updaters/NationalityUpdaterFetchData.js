@@ -21,6 +21,11 @@ function NationalityUpdaterFetchData({value, onChange}) {
 
     const handleSelectChange = (selected) => {
         const selectedId = parseInt(selected, 10);
+        if (isNaN(selectedId)) {
+            setSelected('');
+            onChange('');
+            return;
+        }
         const selectedObject = data.find(nationality => nationality.id === selectedId) || '';
         setSelected(selectedId);
         if (selectedObject) {
@@ -30,10 +35,11 @@ function NationalityUpdaterFetchData({value, onChange}) {
 
     return (
         <div className={'combo-box-default'}>
-            <label className={'label-default'}>
+            <label htmlFor="nationality-select" className={'label-default'}>
                 Nationality:
             </label>
             <select
+                id="nationality-select"
                 value={selected}
                 onChange={e => handleSelectChange(e.target.value)}
                 className={'input-default'}>

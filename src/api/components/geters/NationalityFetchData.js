@@ -16,22 +16,24 @@ function NationalityFetchData({onChange}) {
 
     return (
         <div className={'div-component'}>
-            <label className={'label-default'}>
+            <label htmlFor="nationality-select" className={'label-default'}>
                 Nationality:
-                <select
-                    value={selected}
-                    onChange={e => handleSelectChange(e.target.value)}
-                    className={'input-default'}>
-                    <option value="">Select</option>
-                    {data.map(nationality => (
-                        <option key={nationality.id} value={nationality.id}>
-                            {nationality.name}
-                        </option>
-                    ))}
-                </select>
             </label>
+            <select
+                id="nationality-select"
+                value={selected}
+                onChange={e => handleSelectChange(e.target.value)}
+                className={'input-default'}>
+                <option value="">Select</option>
+                {data.map(nationality => (
+                    <option key={nationality.id} value={nationality.id}>
+                        {nationality.name}
+                    </option>
+                ))}
+            </select>
         </div>
     );
+
 }
 
 export default NationalityFetchData;

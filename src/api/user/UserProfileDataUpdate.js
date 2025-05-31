@@ -1,6 +1,6 @@
 import {APP_REQUEST_URL} from '../../data/Credentials';
-import DateTimeUtil from "../../util/DateTimeUtil";
-import PATCHRequest from "../method/PATCHRequest";
+import DateTimeUtils from "../../util/DateTimeUtils";
+import {PATCHRequest} from "../handler/handlerTokenRefresh";
 
 async function UserProfileDataUpdate(profileData) {
     const url = APP_REQUEST_URL + '/users/profile';
@@ -9,7 +9,7 @@ async function UserProfileDataUpdate(profileData) {
 }
 
 async function createFormData(profileData) {
-    let timestampBirthdate = DateTimeUtil.transformToTimestamp(profileData.birthDate);
+    let timestampBirthdate = DateTimeUtils.transformToTimestamp(profileData.birthDate);
     return {
         userId: profileData.id,
         firstName: profileData.firstName,

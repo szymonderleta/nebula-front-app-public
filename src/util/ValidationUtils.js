@@ -153,6 +153,9 @@ class ValidationUtils {
      * @return {boolean} - Returns true if the birthdate is valid, otherwise false.
      */
     static isBirthDateValid(date) {
+        if (isNaN(new Date(date).getTime())) {
+            return false;
+        }
         const currentYear = new Date().getFullYear();
         const inputYear = new Date(date).getFullYear();
         if (inputYear > currentYear || inputYear < currentYear - 100) {

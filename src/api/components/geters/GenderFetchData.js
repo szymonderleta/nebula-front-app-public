@@ -16,20 +16,21 @@ function GenderFetchData({onChange}) {
 
     return (
         <div className='div-component'>
-            <label className={'label-default'}>
+            <label htmlFor="gender-select" className={'label-default'}>
                 Gender:
-                <select
-                    value={selected}
-                    onChange={e => handleSelectChange(e.target.value)}
-                    className={'input-default'}>
-                    <option value="">Select</option>
-                    {data.map(item => (
-                        <option key={item.id} value={item.id}>
-                            {item.name}
-                        </option>
-                    ))}
-                </select>
             </label>
+            <select
+                id="gender-select"
+                value={selected}
+                onChange={e => handleSelectChange(e.target.value)}
+                className={'input-default'}>
+                <option value="">Select</option>
+                {data.map(item => (
+                    <option key={item.id} value={item.id}>
+                        {item.name}
+                    </option>
+                ))}
+            </select>
         </div>
     );
 }

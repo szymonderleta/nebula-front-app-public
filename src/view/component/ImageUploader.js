@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import '../../resource/style/ImageUploader.css';
 import AvatarComponent from "../component/AvatarComponent";
 import UserAvatar from "../../data/UserAvatar";
-import {processAndUploadImage} from "../../util/ImageUploaderUtil";
+import {processAndUploadImage} from "../../util/ImageUploaderUtils";
 
 /**
  * ImageUploader is a React functional component that provides functionality for uploading and updating user avatars.
@@ -50,6 +50,7 @@ const ImageUploader = () => {
                 onChange={handleFileUpload}
                 style={{display: 'none'}}
                 id="fileInput"
+                data-testid="file-input"
             />
 
             <label htmlFor="fileInput">

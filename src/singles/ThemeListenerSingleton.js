@@ -1,4 +1,3 @@
-
 import ObserverManager from './parent/ObserverManager';
 
 /**

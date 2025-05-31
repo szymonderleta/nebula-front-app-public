@@ -12,8 +12,8 @@
 .Menu-logo {
     height: 8vmin;
     pointer-events: none;
-    margin-left: 10px;
-    padding-right: 40px;
+    margin-left: 16px;
+    padding-right: 80px;
 }
 
 .left-section {
@@ -22,7 +22,7 @@
 }
 
 .logo {
-    width: 100px;
+    width: 200px;
     height: 50px;
     margin-right: 10px;
 }
@@ -61,6 +61,7 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .popup-menu {

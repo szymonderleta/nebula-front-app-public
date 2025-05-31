@@ -1,5 +1,5 @@
 import {APP_REQUEST_URL} from '../../data/Credentials';
-import POSTRequest from "../method/POSTRequest";
+import {POSTRequest} from "../handler/handlerTokenRefresh";
 
 async function ChangePasswordRequest(passwordData) {
     const url = APP_REQUEST_URL + '/account/change-password';

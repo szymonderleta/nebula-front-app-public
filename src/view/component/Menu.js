@@ -10,7 +10,7 @@ import profileSettings from '../../resource/icon/menu/profileSettings.png';
 import AvatarComponent from "./AvatarComponent";
 import UserData from "../../data/UserData";
 import themeListenerSingletonInstance from "../../singles/ThemeListenerSingleton";
-import {processAndUploadImage} from "../../util/ImageUploaderUtil";
+import {processAndUploadImage} from "../../util/ImageUploaderUtils";
 
 /**
  * Represents a Menu component used for navigation and user interactions within the application.
@@ -29,18 +29,35 @@ import {processAndUploadImage} from "../../util/ImageUploaderUtil";
  */
 const Menu = ({onNavigate, onSubNavigate}) => {
 
-    const [theme, setTheme] = useState(UserData.getThemeName() || 'Default');
+    const [theme, setTheme] = useState('Default');
 
+    const handleThemeUpdate = async () => {
+        try {
+            const themeName = await UserData.getThemeName();
+            setTheme(themeName || 'Default');
+        } catch (error) {
+            console.error('Error in handleThemeUpdate:', error);
+            setTheme('Default');
+        }
+    };
     useEffect(() => {
+        const fetchTheme = async () => {
+            try {
+                const theme = await UserData.getThemeName();
+                setTheme(theme);
+            } catch (error) {
+                console.error('Failed to load theme:', error);
+                setTheme('Default');
+            }
+        };
+
+        fetchTheme();
+
         themeListenerSingletonInstance.addObserver(handleThemeUpdate);
         return () => {
             themeListenerSingletonInstance.removeObserver(handleThemeUpdate);
         };
     }, []);
-
-    const handleThemeUpdate = async () => {
-        setTheme(await UserData.getThemeName() || 'Default');
-    };
 
     const [isMenuOpen, setMenuOpen] = useState(false);
     const fileInputRef = useRef(null);
@@ -76,7 +93,7 @@ const Menu = ({onNavigate, onSubNavigate}) => {
     };
 
     return (
-        <div className="menu-container" data-theme={theme}>
+        <div className="menu-container" data-theme={theme} data-testid="menu-container">
             <div className="left-section">
                 <img src={logo} className="Menu-logo" alt="logo"/>
             </div>
@@ -101,14 +118,14 @@ const Menu = ({onNavigate, onSubNavigate}) => {
                 </div>
             </div>
             <div className="right-section">
-                <div className="avatar-container" onClick={handleAvatarClick}>
+                <div className="avatar-container" onClick={handleAvatarClick} data-testid="avatar-container">
                     <AvatarComponent width="64px" height="64px"/>
                     {isMenuOpen && (
                         <div className="popup-menu">
-                            <div onClick={handleAvatarChange}>Change Avatar</div>
-                            <div onClick={() => handleMenuItemClick('profileEditor')}>Profile</div>
-                            <div onClick={() => handleMenuItemClick('passwordChange')}>Password</div>
-                            <div onClick={() => handleMenuItemClick('logout')}>Log out</div>
+                            <div data-testid="change-avatar" onClick={handleAvatarChange}>Change Avatar</div>
+                            <div data-testid="profile" onClick={() => handleMenuItemClick('profileEditor')}>Profile</div>
+                            <div data-testid="password" onClick={() => handleMenuItemClick('passwordChange')}>Password</div>
+                            <div data-testid="logout" onClick={() => handleMenuItemClick('logout')}>Log out</div>
                         </div>
                     )}
                 </div>
@@ -119,6 +136,7 @@ const Menu = ({onNavigate, onSubNavigate}) => {
                 style={{display: 'none'}}
                 ref={fileInputRef}
                 onChange={handleFileUpload}
+                data-testid="avatar-file-input"
             />
         </div>
     );

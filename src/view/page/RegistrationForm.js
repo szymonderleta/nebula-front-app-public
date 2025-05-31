@@ -119,7 +119,7 @@ const RegistrationForm = ({onRegister, onNavigate}) => {
                     <br/>and must be in format user@domain.net.
                 </span>)}
                 <label className={'label-default'}>
-                    Password:
+                    Your Password:
                     <input
                         type="password"
                         value={password}
@@ -156,23 +156,15 @@ const RegistrationForm = ({onRegister, onNavigate}) => {
                     />
                 </label>
                 {!ValidationUtils.isBirthDateValid(birthdate) && (
-                    <span className={'span-alert'}>
-                    Enter valid birthdate value.
-                </span>)}
-                <div className={'combo-box-fix-size-registration-form'}>
-                    <NationalityFetchData onChange={handleNationality}/>
-                    {!ValidationUtils.isNationalityValid(nationality) && (
-                        <span className={'span-alert'}>
-                            Select your nationality from list.
-                        </span>)}
-                </div>
-                <div className={'combo-box-fix-size-registration-form'}>
-                    <GenderFetchData onChange={handleGender}/>
-                    {!ValidationUtils.isGenderValid(gender) && (
-                        <span className={'span-alert'}>
-                            Select your gender.
-                        </span>)}
-                </div>
+                    <span className={'span-alert'}> Enter valid birthdate value. </span>)}
+                <NationalityFetchData onChange={handleNationality}/>
+                {!ValidationUtils.isNationalityValid(nationality) && (
+                    <span className={'span-alert'}> Select your nationality from list. </span>)}
+                {/*<div className={'combo-box-fix-size-registration-form'}>*/}
+                <GenderFetchData onChange={handleGender}/>
+                {!ValidationUtils.isGenderValid(gender) && (
+                    <span className={'span-alert'}> Select your gender. </span>)}
+                {/*</div>*/}
                 <button type="button" onClick={handleRegister} className={'button-registration'}>
                     Register Account
                 </button>

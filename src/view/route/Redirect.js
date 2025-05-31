@@ -62,6 +62,15 @@ const Redirect = () => {
     }, []);
 
     const handleLogin = (userLoginData) => {
+        console.log('Destination:', destination);
+        console.log('Games available:', games);
+        console.log('Handle login called with data:', userLoginData);
+
+        if (games.length === 0) {
+            console.error("Games are not loaded yet. Login process aborted.");
+            setLoginError(true);
+            return;
+        }
         handleUserLogin(userLoginData, games, destination, navigate, setLoginError);
     };
 

@@ -18,6 +18,11 @@ function GenderUpdaterFetchData({value, onChange}) {
 
     const handleSelectChange = (selected) => {
         const selectedId = parseInt(selected, 10);
+        if (isNaN(selectedId)) {
+            setSelected('');
+            onChange('');
+            return;
+        }
         const selectedObject = data.find(gender => gender.id === selectedId) || '';
         setSelected(selectedId);
         onChange(selectedObject);
@@ -25,9 +30,10 @@ function GenderUpdaterFetchData({value, onChange}) {
 
     return (
         <div className={'combo-box-default'}>
-            <label className={'label-default'}>
+            <label htmlFor="gender-select" className={'label-default'}>
                 Gender:
                 <select
+                    id="gender-select"
                     value={selected}
                     onChange={e => handleSelectChange(e.target.value)}
                     className={'input-default'}>

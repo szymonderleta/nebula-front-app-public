@@ -11,9 +11,23 @@ const UserData = {
         }
     },
 
-    loadUserData: async () => {
+    /**
+     * @deprecated
+     * Old, incorrect version of loadUserData,
+     */
+    loadUserDataDepreciated: async () => {
         try {
             return JSON.parse(localStorage.getItem('userData'));
+        } catch (error) {
+            console.error('Error during loading user data:', error);
+            return null;
+        }
+    },
+
+    loadUserData: () => {
+        try {
+            const item = localStorage.getItem('userData');
+            return JSON.parse(item);
         } catch (error) {
             console.error('Error during loading user data:', error);
             return null;
@@ -31,7 +45,7 @@ const UserData = {
         }
     },
 
-    clearUserData: async () => {
+    clearUserData: () => {
         try {
             localStorage.removeItem('userData');
             return true;
@@ -50,9 +64,23 @@ const UserData = {
         }
     },
 
-    getThemeName(){
+    getThemeName() {
         try {
-            return JSON.parse(localStorage.getItem('userData')).settings.general.theme.name;
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            return userData?.settings?.general?.theme?.name || null;
+        } catch (error) {
+            return null;
+        }
+    },
+
+    /**
+     * @deprecated
+     * Old, incorrect version of setTemporaryTheme,
+     * doesn't work properly because localStorage.getItem returns a string.
+     */
+    setTemporaryThemeDeprecated(theme) {
+        try {
+            localStorage.getItem('userData').settings.general.theme = theme;
         } catch (error) {
             return null;
         }
@@ -60,11 +88,17 @@ const UserData = {
 
     setTemporaryTheme(theme) {
         try {
-            localStorage.getItem('userData').settings.general.theme = theme;
+            const userDataString = localStorage.getItem('userData');
+            if (!userDataString) return null;
+            const userData = JSON.parse(userDataString);
+            userData.settings.general.theme = theme;
+            localStorage.setItem('userData', JSON.stringify(userData));
+            return true;
         } catch (error) {
             return null;
         }
     }
+
 };
 
 export default UserData;

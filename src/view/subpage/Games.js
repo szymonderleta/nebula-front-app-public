@@ -46,8 +46,13 @@ const Games = () => {
     };
 
     const loadUserData = async () => {
-        const data = await UserData.loadUserData();
-        setUserData(data);
+        try {
+            const data = await UserData.loadUserData();
+            setUserData(data);
+        } catch (error) {
+            console.error('Error loading user data:', error);
+            setUserData(null);
+        }
     };
 
     useEffect(initializeThemeListener, []); // Theme listener
@@ -62,7 +67,7 @@ const Games = () => {
     }, [userData]);
 
     return (
-        <div className="full-page-container" data-theme={ theme } >
+        <div className="full-page-container" data-testid="game-container" data-theme={ theme } >
             {games.map((game) => (
                 <GameButton key={game.id} game={game}/>
             ))}

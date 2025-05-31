@@ -68,8 +68,10 @@ const PasswordChange = () => {
         <div className="editor-container">
             <div className="form-section password-update-form-section">
                 <div className="password-update-form">
-                    <label>Actual password:</label>
+                    <label htmlFor="current-password">Actual password:</label>
                     <input
+                        id="current-password"
+                        data-testid="current-password-input"
                         type={showPassword.currentPassword ? 'text' : 'password'}
                         value={password.currentPassword}
                         onChange={(e) => updatePasswordField('currentPassword', e.target.value)}
@@ -83,8 +85,10 @@ const PasswordChange = () => {
                     </button>
                 </div>
                 <div className="password-update-form">
-                    <label>New Password:</label>
+                    <label htmlFor="new-password">New Password:</label>
                     <input
+                        id="new-password"
+                        data-testid="new-password-input"
                         type={showPassword.newPassword ? 'text' : 'password'}
                         value={password.newPassword}
                         onChange={(e) => updatePasswordField('newPassword', e.target.value)}
@@ -98,8 +102,10 @@ const PasswordChange = () => {
                     </button>
                 </div>
                 <div className="password-update-form">
-                    <label>Confirm password:</label>
+                    <label htmlFor="confirm-password">Confirm password:</label>
                     <input
+                        id="confirm-password"
+                        data-testid="confirm-password-input"
                         type={showPassword.confirmPassword ? 'text' : 'password'}
                         value={password.confirmPassword}
                         onChange={(e) => updatePasswordField('confirmPassword', e.target.value)}
@@ -112,7 +118,9 @@ const PasswordChange = () => {
                         &#x1F50D;
                     </button>
                 </div>
-                <button className="change-password-button" onClick={handlePasswordChange}>Change password</button>
+                <button className="change-password-button" onClick={handlePasswordChange}>
+                    Change password
+                </button>
             </div>
         </div>
     );

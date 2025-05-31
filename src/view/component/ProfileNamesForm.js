@@ -51,9 +51,10 @@ const ProfileNamesForm = (props) => {
 
     return (
         <div className="info-section">
-            <label>User name:</label>
+            <label htmlFor="username">User name:</label>
             <br/>
             <input
+                id="username"
                 className="custom-textfield"
                 type="text"
                 value={profileData.login}
@@ -61,9 +62,10 @@ const ProfileNamesForm = (props) => {
                 readOnly
             />
             <br/>
-            <label>Email:</label>
+            <label htmlFor="email">Email:</label>
             <br/>
             <input
+                id="email"
                 className="custom-textfield"
                 type="email"
                 value={profileData.email}
@@ -71,9 +73,10 @@ const ProfileNamesForm = (props) => {
                 readOnly
             />
             <br/>
-            <label>First Name:</label>
+            <label htmlFor="firstName">First Name:</label>
             <br/>
             <input
+                id="firstName"
                 className="custom-textfield"
                 type="text"
                 pattern="[A-Za-z0-9\-]"
@@ -86,9 +89,10 @@ const ProfileNamesForm = (props) => {
                 Invalid first name
             </span>)}
             <br/>
-            <label>Last Name:</label>
+            <label htmlFor="lastName">Last Name:</label>
             <br/>
             <input
+                id="lastName"
                 className="custom-textfield"
                 type="text"
                 pattern="[A-Za-z0-9\-]"

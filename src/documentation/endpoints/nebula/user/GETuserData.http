@@ -1,0 +1,7 @@
+GET https://milkyway.local:8555/nebula-rest-api/api/v1/users
+Cookie: accessToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAwMDExLHhic212dXpmYXl5emp4ZHhha0Bja3B0ci5jb20iLCJpc3MiOiJEYkNvbm5lY3Rpb25BcHAiLCJyb2xlcyI6W3siaWQiOjEsIm5hbWUiOiJST0xFX1VTRVIifSx7ImlkIjo0LCJuYW1lIjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzQ3NjcyNzg5LCJleHAiOjE3NDc2NzYzODl9.IZBMVNRL4ug3xkegrfwCNLu-1_Tyx_CxaELuuJs0iPl6I_5A8wMJmUpHTUhFPiMepbcJbdI2dQrejeYaBeJIRg
+
+# get user data in nebula database, based on stored id into access token
+# Examples
+# GET https://milkyway.local:8555/nebula-rest-api/api/v1/users
+# GET http://localhost:8081/api/v1/users

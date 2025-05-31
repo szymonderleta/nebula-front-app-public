@@ -31,15 +31,25 @@ import avatarListenerSingletonInstance from "../../singles/AvatarListenerSinglet
  *  - Logs errors to the console if an avatar fetch operation fails.
  */
 const AvatarComponent = ({width, height}) => {
-    const [avatarSrc, setAvatarSrc] = useState(UserAvatar.getUserAvatar() || null);
+    const [avatarSrc, setAvatarSrc] = useState(null);
     const [isAvatarLoaded, setIsAvatarLoaded] = useState(false);
     const [avatarUpdate, setAvatarUpdate] = useState(1);
 
     useEffect(() => {
-        fetchAndSetAvatar().then();
+        const fetchAndSetAvatar = async () => {
+            try {
+                const updatedAvatar = await UserAvatar.getUserAvatar();
+                setAvatarSrc(updatedAvatar);
+                setIsAvatarLoaded(true);
+            } catch (error) {
+                console.error("Error updating avatar:", error);
+            }
+        };
+
+        fetchAndSetAvatar();
 
         const handleAvatarUpdate = async () => {
-            setAvatarUpdate(avatarUpdate + 1);
+            setAvatarUpdate((prev) => prev + 1);
             await fetchAndSetAvatar();
         };
 
@@ -48,16 +58,6 @@ const AvatarComponent = ({width, height}) => {
             avatarListenerSingletonInstance.removeObserver(handleAvatarUpdate);
         };
     }, []);
-
-    const fetchAndSetAvatar = async () => {
-        try {
-            const updatedAvatar = await UserAvatar.getUserAvatar();
-            setAvatarSrc(updatedAvatar);
-            setIsAvatarLoaded(true);
-        } catch (error) {
-            console.error("Error updating avatar:", error);
-        }
-    };
 
     return (
         <div>

@@ -40,18 +40,29 @@ const PasswordRecovery = ({onNavigate}) => {
     const [isRecoveryRequested, setRecoveryRequested] = useState(false);
 
     const handleEmailChange = (e) => {
-        setEmail(e.target.value);
+        const newEmail = e.target.value;
+        setEmail(newEmail);
+
+        ValidationUtils.isEmailValid(newEmail);
     };
 
     const handleRecoveryRequest = () => {
         if (ValidationUtils.isEmailValid(email)) {
-            ResetPasswordRequest(email).then(result => {
-                setRecoveryRequested(true);
-            });
+            ResetPasswordRequest(email)
+                .then(result => {
+                    if (result.success) {
+                        setRecoveryRequested(true);
+                    }
+                })
+                .catch(error => {
+                    console.error("Password reset request failed:", error);
+                    alert("Failed to send recovery link. Please try again.");
+                });
         } else {
             alert(ERROR_INVALID_EMAIL + email);
         }
     };
+
 
     return (
         <div className="password-recovery-container div-major">
@@ -63,8 +74,9 @@ const PasswordRecovery = ({onNavigate}) => {
             ) : (
                 <div className="recovery-form">
                     <h2>Password recovery</h2>
-                    <label>Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input
+                        id="email"
                         type="email"
                         value={email}
                         onChange={handleEmailChange}

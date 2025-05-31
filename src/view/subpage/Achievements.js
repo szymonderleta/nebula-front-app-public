@@ -10,16 +10,20 @@ const defaultTableHeaders = [
     {key: 'level', label: '5-star scale'}
 ];
 
-
 const RenderStarRating = ({rating}) => {
     const stars = Array.from({length: 5}, (_, i) => (
         <span
             key={i + 1}
+            data-testid="star"
             className={i + 1 <= rating ? 'gold-star' : 'black-star'}
-        >&#9733;</span>
+            aria-label={i + 1 <= rating ? 'gold star' : 'black star'}
+        >
+            &#9733;
+        </span>
     ));
-    return <div className="star-container">{stars}</div>;
+    return <div className="star-container" data-testid="star-container">{stars}</div>;
 };
+
 
 /**
  * Achievements component.

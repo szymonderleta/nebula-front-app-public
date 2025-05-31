@@ -22,6 +22,11 @@ function ThemeUpdaterFetchData({value, onChange}) {
 
     const handleSelectChange = (selected) => {
         const selectedId = parseInt(selected, 10);
+        if (isNaN(selectedId)) {
+            setSelected('');
+            onChange('');
+            return;
+        }
         const selectedObject = data.find(gender => gender.id === selectedId) || '';
         setSelected(selectedId);
         onChange(selectedObject);
