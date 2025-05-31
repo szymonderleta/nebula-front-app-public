@@ -1,0 +1,17 @@
+@import url('Themes.css');
+
+body,
+.theme-style {
+    background: var(--general-bg-color-body);
+    color: var(--general-text-color-body);
+}
+
+.full-page-container {
+    width: 100%;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

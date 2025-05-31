@@ -1,0 +1,15 @@
+POST https://localhost:8081/api/v1/games
+Content-Type: application/json
+Cookie: accessToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNSxjbnk2ODI5MkBiY29vcS5jb20iLCJpc3MiOiJEYkNvbm5lY3Rpb25BcHAiLCJyb2xlcyI6W3siaWQiOjEsIm5hbWUiOiJST0xFX1VTRVIifSx7ImlkIjo0LCJuYW1lIjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzQ2MTg2MzE4LCJleHAiOjE3NDYxODk5MTh9.34qFvwcHwGw9kF2G-N5TLuMmzXevBan1wLETNsBcxmqs52KWdmzJn-_3IM321B7BbThajim4UygTtKTGFftFeQ
+
+# used to add new game entry to database, requires valid access token with Admin Role
+# Examples
+# POST https://milkyway.local:8555/nebula-rest-api/api/v1/games
+# POST http://localhost:8081/api/v1/games
+
+{
+  "name": "Non-Existing Game",
+  "enable": true,
+  "iconUrl": "https://example.com/icon.png",
+  "pageUrl": "https://example.com/page.html"
+}

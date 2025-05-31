@@ -1,0 +1,102 @@
+@import url('Themes.css');
+
+body {
+    background: var(--general-bg-color-body);
+    color: var(--general-text-color-body);
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.span-link {
+    color: var(--button-blue);
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.span-link:hover {
+    color: var(--button-green-hover);
+}
+
+.span-alert {
+    color: var(--error-color);
+    margin-left: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.button-registration {
+    width: 100%;
+    padding: 10px 15px;
+    background: var(--button-blue);
+    color: var(--general-bg-color-body, #fff);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.button-registration:hover {
+    background: var(--button-green-hover);
+    transform: scale(1.02);
+}
+
+.div-major {
+    max-width: 400px;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-component, .div-component-b {
+    width: 100%;
+    padding: 8px;
+}
+
+.div-component select {
+    width: 100%;
+    /*padding: 10px;*/
+    /*box-sizing: border-box;*/
+}
+
+.form-major {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.label-default {
+    margin-bottom: 10px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.input-default {
+    background: var(--input-bg);
+    color: var(--input-txt);
+    width: 95%;
+    padding: 8px;
+    border: 1px solid var(--input-border, #ccc);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s;
+}
+
+.input-default:focus {
+    outline: none;
+    border-color: var(--input-focus-bg, #007bff);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.combo-box-default {
+    margin-top: 15px;
+}

@@ -1,0 +1,34 @@
+@import 'Themes.css';
+
+:root {
+    --padding-default: 5px;
+    --icon-size: 48px;
+    --table-width: 80%;
+}
+
+.gold-star {
+    color: var(--star-achievement-full);
+}
+
+.black-star {
+    color: var(--star-achievement-empty);
+}
+
+.star-container {
+    display: flex;
+}
+
+.custom-table {
+    width: var(--table-width);
+}
+
+.custom-table td,
+.custom-table th {
+    padding: var(--padding-default);
+}
+
+.achievement-icon {
+    max-width: var(--icon-size);
+    max-height: var(--icon-size);
+    display: block;
+}

@@ -1,0 +1,8 @@
+GET https://localhost:8081/api/v1/token/id
+Content-Type: application/json
+Cookie: accessToken=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAwMDExLHhic212dXpmYXl5emp4ZHhha0Bja3B0ci5jb20iLCJpc3MiOiJEYkNvbm5lY3Rpb25BcHAiLCJyb2xlcyI6W3siaWQiOjEsIm5hbWUiOiJST0xFX1VTRVIifSx7ImlkIjo0LCJuYW1lIjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzQ1NzU1NzU1LCJleHAiOjE3NDU3NTkzNTV9.E5UhP2oWuVA9lCUOXD43J6vJBQuRmwqGVwxID-kesgiuK1bLpJL6jW2mBpakBmMSYf6JcTMJEKamScJDkbefBQ
+
+# requires cookie with valid accessToken
+# Examples
+# GET https://milkyway.local:8555/nebula-rest-api/api/v1/token/id
+# GET http://localhost:8081/api/v1/token/id
